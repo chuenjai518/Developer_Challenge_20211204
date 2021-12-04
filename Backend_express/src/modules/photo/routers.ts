@@ -3,7 +3,7 @@ import apicache from 'apicache'
 
 import photoController from './controller'
 
-let cache = apicache.middleware
+const cache = apicache.middleware
 
 const photoRouter = express.Router()
 

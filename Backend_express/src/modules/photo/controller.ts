@@ -25,7 +25,7 @@ const getPhoto = async (req: Request, res: Response) => {
       },
       params,
     })
-    let photoList: [PhotoI] = apiRes.data
+    const photoList: [PhotoI] = apiRes.data
     res.status(200).json(photoList)
   } catch (error) {
     res.status(500).json(error)
@@ -49,7 +49,7 @@ const searchPhoto = async (req: Request, res: Response) => {
       params,
     })
 
-    let photoList: [PhotoI] = apiRes.data
+    const photoList: [PhotoI] = apiRes.data
 
     res.status(200).json(photoList)
   } catch (error) {
