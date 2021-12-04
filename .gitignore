@@ -1,0 +1,10 @@
+/node_modules
+/log
+/config
+.env*
+!.gitignore
+/.vscode/launch.json
+/dist
+.vscode/settings.json
+/migration/
+.nyc_output/
