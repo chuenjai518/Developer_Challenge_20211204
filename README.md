@@ -2,7 +2,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](./project_screenshot.png?raw=true)
+![Screenshot](./project_screenshot.png?raw=true "Screenshot")
 
 ### Built With
 
