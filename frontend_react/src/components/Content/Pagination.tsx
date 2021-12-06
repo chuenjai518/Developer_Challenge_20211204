@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { Container, HStack, Icon, Input } from '@chakra-ui/react'
+import { Container, HStack, Icon, Input, useToast } from '@chakra-ui/react'
 
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
@@ -16,16 +16,36 @@ export const Pagination: React.FC<PaginationProps> = ({ data }) => {
 
   const [pageNum, setPageNum] = useState<number>(page)
 
+  const toast = useToast()
+
   useEffect(() => {
     setPageNum(page)
   }, [page])
 
   const handlePrevPage = useCallback(() => {
-    setPage(page - 1)
+    if (page <= 1) {
+      toast({
+        title: 'This is the first page',
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+      })
+    } else {
+      setPage(page - 1)
+    }
   }, [page])
 
   const handleNextPage = useCallback(() => {
-    setPage(page + 1)
+    if (totalPage !== 0 && page >= totalPage) {
+      toast({
+        title: 'This is the last page',
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+      })
+    } else {
+      setPage(page + 1)
+    }
   }, [page])
 
   const handleOnChangePageNum = useCallback(
