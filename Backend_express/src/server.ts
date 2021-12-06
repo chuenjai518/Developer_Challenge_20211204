@@ -10,9 +10,10 @@ const app = express()
 // Server logs
 app.use(morgan('tiny'))
 
+// align with unsplash api limit
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  windowMs: 60 * 60 * 1000, // 60 minutes
+  max: 50, // limit each IP to 50 requests per windowMs
 })
 
 // Limit server request

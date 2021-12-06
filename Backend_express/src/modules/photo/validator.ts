@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-const ORDER_BY = ['latest', 'oldest', 'popular']
+const ORDER_BY = ['latest', 'oldest', 'popular', 'relevant']
 const COLORS = ['black_and_white', 'black', 'white', 'yellow', 'orange', 'red', 'purple', 'magenta', 'green', 'teal', 'blue']
 const CONTENT_FILTER = ['low', 'high']
 const ORIENTATION = ['landscape', 'portrait', 'squarish']
